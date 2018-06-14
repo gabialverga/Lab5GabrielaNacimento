@@ -5,20 +5,22 @@ import java.util.ArrayList;
 public class CenarioController {
 	
 	public ArrayList<Cenario> cenarios;
-	
-	
+	public int caixa;
+	public double taxa;
 	
 	public CenarioController() {
 		this.cenarios = new ArrayList<Cenario>();
+		this.caixa = 0;
+		this.taxa = 0.0;
 	}
 	
-	public void inicializa(int cenario, int caixa, double taxa) {
-		this.cenarios.get(cenario-1).setCaixa(caixa);
-		this.cenarios.get(cenario-1).setTaxa(taxa);
+	public void inicializa(int caixa, double taxa) {
+		this.caixa = caixa;
+		this.taxa = taxa;
 	}
 	
-	public int getCaixa(int cenario) {
-		return this.cenarios.get(cenario-1).getCaixa();
+	public int getCaixa() {
+		return this.caixa;
 	}
 	
 	public int cadastrarCenario(String descricao) {
@@ -26,11 +28,11 @@ public class CenarioController {
 		return this.cenarios.size();
 	}
 	
-	public String exibirCenario(int cenario) {
+	public String getCenario(int cenario) {
 		return this.cenarios.get(cenario-1).toString();
 	}
 	
-	public String exibirCenarios() {
+	public String getCenarios() {
 		String cenarios = "";
 		for(int i=0;i<this.cenarios.size();i++) {
 			cenarios+=(i+1)+" - "+this.cenarios.get(i).toString()+"\n";
@@ -54,7 +56,15 @@ public class CenarioController {
 		return this.cenarios.get(cenario-1).exibeApostas();
 	}
 	
-	public void fecharAposta(int cenario, boolean ocorreu) {
+	public void fecharApostas(int cenario, boolean ocorreu) {
 		this.cenarios.get(cenario-1).finalizarCenario(ocorreu);
+	}
+
+	public int getCaixaCenario(int cenario) {
+		return this.cenarios.get(cenario-1).getCaixaCenarioFechado();
+	}
+
+	public int getRateioCenario(int cenario) {
+		return this.cenarios.get(cenario-1).getRateioCenarioFechado();
 	}
 }

@@ -7,51 +7,46 @@ public class Cenario {
 	private String estado;
 	private String descricao;
 	public ArrayList<Aposta> apostas;
-	public int caixa;
-	public int dividido;
-	public double taxa;
+	public int caixa,rateio;
 	
 	public Cenario(String descricao) {
 		this.descricao = descricao;
 		this.estado = "Nao finalizado";
 		this.apostas = new ArrayList<Aposta>();
 		this.caixa = 0;
-		this.taxa = 0.0;
-		this.dividido = 0;
-	}
-	
-	public void setTaxa(double taxa) {
-		this.taxa = taxa;
-	}
-	
-	public void setCaixa(int caixa) {
-		this.caixa = caixa;
-	}
-	
-	public int getCaixa() {
-		return this.caixa;
+		this.rateio = 0;
 	}
 	
 	public void finalizarCenario(boolean ocorreu) {
-		int soma = 0;
+		int caixa = 0,total=0;
 		if(ocorreu) {
 			this.estado = "Finalizado (ocoreu)";
 			for(Aposta a: apostas) {
 				if(!this.descricao.equals(a.getPrevisao())) {
-					soma+=a.getValor();
+					caixa+=a.getValor();
 				}
+				total+=a.getValor();
 			}
 		}
 		else {
 			this.estado = "Finalizado (nao ocoreu)";
 			for(Aposta a: apostas) {
 				if(this.descricao.equals(a.getPrevisao())) {
-					soma+=a.getValor();
+					caixa+=a.getValor();
 				}
+				total+=a.getValor();
 			}
 		}
-		this.caixa+=soma*this.taxa;
-		this.dividido = (int) (soma - (soma*this.taxa));
+		this.caixa = caixa;
+		this.rateio = total-caixa;
+	}
+	
+	public int getCaixaCenarioFechado() {
+		return this.caixa;
+	}
+	
+	public int getRateioCenarioFechado() {
+		return this.rateio;
 	}
 	
 	public String toString() {
@@ -81,7 +76,5 @@ public class Cenario {
 		}
 		return apostas;
 	}
-	
-	
 	
 }
