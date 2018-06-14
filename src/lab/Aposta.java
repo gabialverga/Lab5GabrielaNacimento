@@ -20,4 +20,8 @@ public class Aposta {
 		return this.valor;
 	}
 	
+	public String getPrevisao() {
+		return this.previsao;
+	}
+	
 }
