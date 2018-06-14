@@ -10,6 +10,9 @@ public class Cenario {
 	public int caixa,rateio;
 	
 	public Cenario(String descricao) {
+		descricao = descricao.toUpperCase();
+		if(!descricao.equals("VAI ACONTECER") && !descricao.equals("NAO VAI ACONTECER"))
+			throw new NullPointerException("Descricao invalida.");
 		this.descricao = descricao;
 		this.estado = "Nao finalizado";
 		this.apostas = new ArrayList<Aposta>();
@@ -58,11 +61,7 @@ public class Cenario {
 	}
 	
 	public int getValorTotalApostas() {
-		int total=0;
-		for(Aposta a: apostas) {
-			total+=a.getValor();
-		}
-		return total;
+		return this.caixa + this.rateio;
 	}
 	
 	public int getTotalDeApostas() {

@@ -7,6 +7,13 @@ public class Aposta {
 	private String previsao;
 	
 	public Aposta(String nome, int valor, String previsao) {
+		previsao = previsao.toUpperCase();
+		if(nome.equals(null) || nome.equals(""))
+			throw new NullPointerException("Nome do apostador invalido.");
+		if(valor <= 0)
+			throw new NullPointerException("Valor da aposta invalido.");
+		if(!previsao.equals("VAI ACONTECER") && !previsao.equals("NAO VAI ACONTECER"))
+			throw new NullPointerException("Previsao invalida.");
 		this.nome = nome;
 		this.valor = valor;
 		this.previsao = previsao;
