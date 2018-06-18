@@ -44,5 +44,5 @@ public class CenarioTest {
 	public void testeExibeApostas() {
 		String saida ="Gabriela - 100 - VAI ACONTECER\nGabriela - 50 - NAO VAI ACONTECER\n";
 		assertEquals(saida,cenario.exibeApostas());
-	}	
+	}
 }

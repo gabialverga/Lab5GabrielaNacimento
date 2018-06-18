@@ -45,10 +45,14 @@ public class Cenario {
 	}
 	
 	public int getCaixaCenarioFechado() {
+		if(!this.estado.equals("Finalizado (nao ocoreu)") && !this.estado.equals("Finalizado (nao ocoreu)"))
+			throw new NullPointerException("Cenario ainda nao finalizado.");
 		return this.caixa;
 	}
 	
 	public int getRateioCenarioFechado() {
+		if(!this.estado.equals("Finalizado (nao ocoreu)") && !this.estado.equals("Finalizado (nao ocoreu)"))
+			throw new NullPointerException("Cenario ainda nao finalizado.");
 		return this.rateio;
 	}
 	
@@ -57,14 +61,20 @@ public class Cenario {
 	}
 	
 	public void cadastrarAposta(String apostador, int valor, String previsao) {
+		if(this.estado.equals("Finalizado (nao ocoreu)") || this.estado.equals("Finalizado (nao ocoreu)"))
+			throw new NullPointerException("Cenario finalizado.");
 		this.apostas.add(new Aposta(apostador, valor, previsao));
 	}
 	
 	public int getValorTotalApostas() {
+		if(!this.estado.equals("Finalizado (nao ocoreu)") && !this.estado.equals("Finalizado (nao ocoreu)"))
+			throw new NullPointerException("Cenario ainda nao finalizado.");
 		return this.caixa + this.rateio;
 	}
 	
 	public int getTotalDeApostas() {
+		if(!this.estado.equals("Finalizado (nao ocoreu)") && !this.estado.equals("Finalizado (nao ocoreu)"))
+			throw new NullPointerException("Cenario ainda nao finalizado.");
 		return this.apostas.size();
 	}
 
