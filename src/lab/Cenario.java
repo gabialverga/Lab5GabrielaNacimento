@@ -10,8 +10,8 @@ public class Cenario {
 	public int caixa,rateio;
 	
 	public Cenario(String descricao) {
-		descricao = descricao.toUpperCase();
-		if(!descricao.equals("VAI ACONTECER") && !descricao.equals("NAO VAI ACONTECER"))
+		//descricao = descricao.toUpperCase();
+		if(descricao.equals("") || descricao.equals(null))
 			throw new NullPointerException("Descricao invalida.");
 		this.descricao = descricao;
 		this.estado = "Nao finalizado";
