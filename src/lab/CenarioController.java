@@ -57,6 +57,8 @@ public class CenarioController {
 	}
 	
 	public int totalDeApostas(int cenario) {
+		if(cenario<1 || cenario>this.cenarios.size())
+			throw new NullPointerException("Cenario invalido.");
 		return this.cenarios.get(cenario-1).getTotalDeApostas();
 	}
 	

@@ -54,10 +54,15 @@ public class Facade {
 		return this.c.getRateioCenario(cenario);
 	}
 	
+	public int totalDeApostas(int cenario) {
+		return this.c.totalDeApostas(cenario);
+	}
+	
 	public static void main(String[] args) {
-		args = new String[] {"lab.Facade","LAB04/us1_test.txt"};
-		args = new String[] {"lab.Facade","LAB04/us2_test.txt"};
-		args = new String[] {"lab.Facade","LAB04/us3_test.txt"};
+		args = new String[] {"lab.Facade","LAB04/us1_test.txt",
+										  "LAB04/us2_test.txt",
+										  "LAB04/us3_test.txt",
+										  "LAB04/us4_test.txt"};
 		EasyAccept.main(args);
 	}
 	

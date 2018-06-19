@@ -8,6 +8,8 @@ public class Aposta {
 	
 	public Aposta(String nome, int valor, String previsao) {
 		previsao = previsao.toUpperCase();
+		previsao = previsao.trim();
+		nome = nome.trim();
 		if(nome.equals(null) || nome.equals(""))
 			throw new NullPointerException("Nome do apostador invalido.");
 		if(valor <= 0)

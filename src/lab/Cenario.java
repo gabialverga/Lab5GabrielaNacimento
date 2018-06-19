@@ -67,14 +67,14 @@ public class Cenario {
 	}
 	
 	public int getValorTotalApostas() {
-		if(!this.estado.equals("Finalizado (nao ocoreu)") && !this.estado.equals("Finalizado (nao ocoreu)"))
-			throw new NullPointerException("Cenario ainda nao finalizado.");
-		return this.caixa + this.rateio;
+		int total = 0;
+		for(Aposta a: this.apostas) {
+			total+=a.getValor();
+		}
+		return total;
 	}
 	
 	public int getTotalDeApostas() {
-		if(!this.estado.equals("Finalizado (nao ocoreu)") && !this.estado.equals("Finalizado (nao ocoreu)"))
-			throw new NullPointerException("Cenario ainda nao finalizado.");
 		return this.apostas.size();
 	}
 
