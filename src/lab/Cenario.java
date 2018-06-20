@@ -40,12 +40,11 @@ public class Cenario {
 		return (int) (caixa*taxa);
 	}
 	
-	public int getRateioCenarioFechado() {
+	public int getRateioCenarioFechado(double taxa) {
 		if(this.estado.equals("Nao finalizado"))
 			throw new NullPointerException("Cenario ainda nao finalizado.");
-		int caixa=0,total=0;
+		int caixa=0;
 		for(Aposta a: this.apostas) {
-			total+=a.getValor();
 			if(this.estado.equals("Finalizado (ocoreu)") && a.getPrevisao().equals("NAO VAI ACONTECER")) {
 				caixa+=a.getValor();
 			}
@@ -53,7 +52,7 @@ public class Cenario {
 				caixa+=a.getValor();
 			}
 		}
-		return total;
+		return caixa - (int) (caixa*taxa);
 	}
 	
 	public String toString() {
