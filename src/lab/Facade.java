@@ -59,11 +59,10 @@ public class Facade {
 	}
 	
 	public static void main(String[] args) {
-		args = new String[] {"lab.Facade","LAB04/us1_test.txt",
-										  "LAB04/us2_test.txt",
-										  "LAB04/us3_test.txt",
-										  "LAB04/us4_test.txt"};
+		args = new String[] {"lab.Facade","testes/us1_test.txt",
+										  "testes/us2_test.txt",
+										  "testes/us3_test.txt",
+										  "testes/us4_test.txt"};
 		EasyAccept.main(args);
 	}
-	
 }

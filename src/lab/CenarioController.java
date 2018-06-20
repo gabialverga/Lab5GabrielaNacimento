@@ -77,7 +77,7 @@ public class CenarioController {
 	public int getCaixaCenario(int cenario) {
 		if(cenario<1 || cenario>this.cenarios.size())
 			throw new NullPointerException("Cenario invalido.");
-		return this.cenarios.get(cenario-1).getCaixaCenarioFechado();
+		return this.cenarios.get(cenario-1).getCaixaCenarioFechado(this.taxa);
 	}
 
 	public int getRateioCenario(int cenario) {
