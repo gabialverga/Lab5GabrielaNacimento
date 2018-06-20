@@ -71,6 +71,8 @@ public class CenarioController {
 	public void fecharApostas(int cenario, boolean ocorreu) {
 		if(cenario<1 || cenario>this.cenarios.size())
 			throw new NullPointerException("Cenario invalido.");
+		if(!this.cenarios.get(cenario-1).getEstado().equals("Nao finalizado"))
+			throw new NullPointerException("Cenario fechado.");
 		this.cenarios.get(cenario-1).finalizarCenario(ocorreu);
 	}
 
