@@ -21,12 +21,12 @@ expectError "Cenario invalido." fecharAposta cenario=-1 ocorreu=false
 expectError "Cenario invalido." fecharAposta cenario=80 ocorreu=false
 expectError "Cenario fechado." fecharAposta cenario=1 ocorreu=false
 
-expectError "Erro na consulta do caixa do cenario: Cenario invalido" getCaixaCenario cenario=0
-expectError "Erro na consulta do caixa do cenario: Cenario invalido" getCaixaCenario cenario=-1
-expectError "Erro na consulta do caixa do cenario: Cenario nao cadastrado" getCaixaCenario cenario=99
-expectError "Erro na consulta do caixa do cenario: Cenario ainda esta aberto" getCaixaCenario cenario=3
+expectError "Cenario invalido." getCaixaCenario cenario=0
+expectError "Cenario invalido." getCaixaCenario cenario=-1
+expectError "Cenario invalido." getCaixaCenario cenario=99
+expectError "Cenario nao finalizado." getCaixaCenario cenario=3
 
-expectError "Erro na consulta do total de rateio do cenario: Cenario invalido" getTotalRateioCenario cenario=0
-expectError "Erro na consulta do total de rateio do cenario: Cenario invalido" getTotalRateioCenario cenario=-1
-expectError "Erro na consulta do total de rateio do cenario: Cenario nao cadastrado" getTotalRateioCenario cenario=80
-expectError "Erro na consulta do total de rateio do cenario: Cenario ainda esta aberto" getTotalRateioCenario cenario=3
+expectError "Cenario invalido." getTotalRateioCenario cenario=0
+expectError "Cenario invalido." getTotalRateioCenario cenario=-1
+expectError "Cenario invalido." getTotalRateioCenario cenario=80
+expectError "Cenario nao finalizado." getTotalRateioCenario cenario=3
