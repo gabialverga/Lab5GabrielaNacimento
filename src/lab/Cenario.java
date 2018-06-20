@@ -16,6 +16,10 @@ public class Cenario {
 		this.apostas = new ArrayList<Aposta>();
 	}
 	
+	public String getEstado(){
+		return this.estado;
+	}
+	
 	public void finalizarCenario(boolean ocorreu) {
 		if(ocorreu) {
 			this.estado = "Finalizado (ocoreu)";
