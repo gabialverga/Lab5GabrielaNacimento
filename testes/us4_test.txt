@@ -19,7 +19,7 @@ expect 100200 getCaixa
 expectError "Cenario invalido." fecharAposta cenario=0 ocorreu=false
 expectError "Cenario invalido." fecharAposta cenario=-1 ocorreu=false
 expectError "Cenario invalido." fecharAposta cenario=80 ocorreu=false
-expectError "Cenario fechado." fecharAposta cenario=1 ocorreu=false
+expectError "Cenario finalizado." fecharAposta cenario=1 ocorreu=false
 
 expectError "Cenario invalido." getCaixaCenario cenario=0
 expectError "Cenario invalido." getCaixaCenario cenario=-1
