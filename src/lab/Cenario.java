@@ -3,27 +3,27 @@ package lab;
 import java.util.ArrayList;
 
 /**
- * Representação de uma cenário de onde serão feita as apostas.
- * Cada cenário possui um estado, uma descrição e as apostas feitas para ele.
+ * Representaï¿½ï¿½o de uma cenï¿½rio de onde serï¿½o feita as apostas.
+ * Cada cenï¿½rio possui um estado, uma descriï¿½ï¿½o e as apostas feitas para ele.
  * 
  * @author Gabriela Alverga - 117210703
  */
 public class Cenario {
 	
 	/**
-	 * estado, estado do cenário, se esta em aberto ou finalizado (ocorrendo ou não).
-	 * descricao, descrição do que está sendo apostado para ocorrer ou não.
-	 * apostas, lista que possui todas as apostas feitas para esse cenário.
+	 * estado, estado do cenï¿½rio, se esta em aberto ou finalizado (ocorrendo ou nï¿½o).
+	 * descricao, descriï¿½ï¿½o do que estï¿½ sendo apostado para ocorrer ou nï¿½o.
+	 * apostas, lista que possui todas as apostas feitas para esse cenï¿½rio.
 	 */
 	private String estado;
 	private String descricao;
 	public ArrayList<Aposta> apostas;
 	
 	/**
-	 * Constroi um cenario padrão, a partir da descrição feita.
-	 * Cada cenário começa com a lista de apostas vazia e com estado não finalizado.
+	 * Constroi um cenario padrï¿½o, a partir da descriï¿½ï¿½o feita.
+	 * Cada cenï¿½rio comeï¿½a com a lista de apostas vazia e com estado nï¿½o finalizado.
 	 * 
-	 * @param descricao, descrição do que esta sendo apostado.
+	 * @param descricao, descriï¿½ï¿½o do que esta sendo apostado.
 	 */
 	public Cenario(String descricao) {
 		descricao = descricao.trim();
@@ -35,18 +35,18 @@ public class Cenario {
 	}
 	
 	/**
-	 * Retorna uma String contendo o estado do cenário.
+	 * Retorna uma String contendo o estado do cenï¿½rio.
 	 * 
-	 * @return uma String com o estado do cenário.
+	 * @return uma String com o estado do cenï¿½rio.
 	 */
 	public String getEstado(){
 		return this.estado;
 	}
 	
 	/**
-	 * Finaliza um cenário.
+	 * Finaliza um cenï¿½rio.
 	 * 
-	 * @param ocorreu, valor booleano que indica se o que foi descrito no cenário ocorreu ou não.
+	 * @param ocorreu, valor booleano que indica se o que foi descrito no cenï¿½rio ocorreu ou nï¿½o.
 	 */
 	public void finalizarCenario(boolean ocorreu) {
 		if(!this.estado.equals("Nao finalizado"))
@@ -80,8 +80,8 @@ public class Cenario {
 	}
 	
 	/**
-	 * Retorna  uma representação em String dos dados do cenário.
-	 * A representação segue o formato: "descricao - estado"
+	 * Retorna  uma representaï¿½ï¿½o em String dos dados do cenï¿½rio.
+	 * A representaï¿½ï¿½o segue o formato: "descricao - estado"
 	 * 
 	 * @return String com os dados do cenario.
 	 */
@@ -105,7 +105,7 @@ public class Cenario {
 	/**
 	 * Retorna o valor total de todas as apostas feitas nesse cenario.
 	 * 
-	 * @return Valor inteiro contendo a soma do valor de todas as apostas feitas no cenário.
+	 * @return Valor inteiro contendo a soma do valor de todas as apostas feitas no cenï¿½rio.
 	 */
 	public int getValorTotalApostas() {
 		int total = 0;
@@ -118,16 +118,16 @@ public class Cenario {
 	/**
 	 * Retorna a quantidade de apostas feitas nesse cenario.
 	 *
-	 * @return Um valor que representa o número de apostas feitas nesse cenário.
+	 * @return Um valor que representa o nï¿½mero de apostas feitas nesse cenï¿½rio.
 	 */
 	public int getTotalDeApostas() {
 		return this.apostas.size();
 	}
 
 	/**
-	 * Retorna uma String contendo as informações de todas as apostas feitas naquele cenário.
+	 * Retorna uma String contendo as informaï¿½ï¿½es de todas as apostas feitas naquele cenï¿½rio.
 	 * 
-	 * @return Uma String contendo as infoçãoes de todas as apostas.
+	 * @return Uma String contendo as infoï¿½ï¿½oes de todas as apostas.
 	 */
 	public String exibeApostas() {
 		String apostas="";

@@ -22,6 +22,10 @@ public class Facade {
 		return this.c.cadastrarCenario(descricao);
 	}
 	
+	public int cadastrarCenario(String descricao, int bonus) {
+		return this.c.cadastrarCenario(descricao, bonus);
+	}
+	
 	public String exibirCenario(int cenario) {
 		return this.c.getCenario(cenario);
 	}

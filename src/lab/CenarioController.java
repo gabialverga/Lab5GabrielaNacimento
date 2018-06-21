@@ -3,7 +3,7 @@ package lab;
 import java.util.ArrayList;
 
 /**
- * Utilizado para fazer a comunicação das funcionaliades do cenario.
+ * Utilizado para fazer a comunicaï¿½ï¿½o das funcionaliades do cenario.
  * 
  * @author Gabriela Alverga - 117210703
  */
@@ -62,9 +62,21 @@ public class CenarioController {
 	}
 	
 	/**
-	 * Retorna uma representação em String de um determinado cenario.
+	 * Cria um cenario bonus no controller.
+	 * @param descricao, descricao do cenario a ser criado.
+	 * @param bonus, valor a ser adicionado ao que serÃ¡ dividido pelos vencedores.
 	 * 
-	 * @param cenario, cenario que se deseja obter informações.
+	 * @return um inteiro representando o numero do cenario.
+	 */
+	public int cadastrarCenario(String descricao,int bonus) {
+		this.cenarios.add(new CenarioBonus(descricao,bonus));
+		return this.cenarios.size();
+	}
+	
+	/**
+	 * Retorna uma representaï¿½ï¿½o em String de um determinado cenario.
+	 * 
+	 * @param cenario, cenario que se deseja obter informaï¿½ï¿½es.
 	 * 
 	 * @return Uma String contendo os dados do cenairo desejado.
 	 */
@@ -75,7 +87,7 @@ public class CenarioController {
 	}
 	
 	/**
-	 * Retorna uma String com a representação de todos os cenario cadastrados.
+	 * Retorna uma String com a representaï¿½ï¿½o de todos os cenario cadastrados.
 	 * 
 	 * @return Ums String contendo os dados de todos os cenario cadastrados.
 	 */
@@ -128,7 +140,7 @@ public class CenarioController {
 	 * Retorna uma String representando todas as apostas de um cenario.
 	 * @param cenario, cenario que deve ser consultato.
 	 * 
-	 * @return Uma String com as informações de todas as apostas feitas naquele cenario.
+	 * @return Uma String com as informaï¿½ï¿½es de todas as apostas feitas naquele cenario.
 	 */
 	public String exibeApostas(int cenario) {
 		if(cenario<1 || cenario>this.cenarios.size())
@@ -140,7 +152,7 @@ public class CenarioController {
 	 * Finaliza um cenario.
 	 * 
 	 * @param cenario, cenario que deve ser finalizado.
-	 * @param ocorreu, booleano que indica se o cenario ocorreu ou não.
+	 * @param ocorreu, booleano que indica se o cenario ocorreu ou nï¿½o.
 	 */
 	public void fecharApostas(int cenario, boolean ocorreu) {
 		if(cenario<1 || cenario>this.cenarios.size())
